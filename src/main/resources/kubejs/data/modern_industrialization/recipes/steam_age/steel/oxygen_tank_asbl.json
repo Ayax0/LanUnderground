@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R R",
+    "PCP",
+    "BTB"
+  ],
+  "key": {
+    "R": {
+      "item": "modern_industrialization:steel_ring"
+    },
+    "P": {
+      "item": "modern_industrialization:steel_plate"
+    },
+    "C": {
+      "item": "minecraft:iron_chestplate"
+    },
+    "B": {
+      "item": "modern_industrialization:steel_bolt"
+    },
+    "T": {
+      "item": "modern_industrialization:steel_tank"
+    }
+  },
+  "result": {
+    "item": "lanunderground:steel_oxygen_tank",
+    "count": 1
+  }
+}

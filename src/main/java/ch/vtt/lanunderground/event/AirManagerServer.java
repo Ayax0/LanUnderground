@@ -124,7 +124,11 @@ public class AirManagerServer {
                 for(ConfigurableItemStack _stack : inventory.getItemStacks()) {
                     ItemStack stack = _stack.toStack();
                     if(stack.getItem() instanceof ArmorItem armor) {
-                        if(armor.getMaterial() instanceof BronzeOxygenTankArmorMaterial) {
+                        if(
+                            armor.getMaterial() instanceof BronzeOxygenTankArmorMaterial ||
+                            armor.getMaterial() instanceof SteelOxygenTankArmorMaterial ||
+                            armor.getMaterial() instanceof ElectricOxygenTankArmorMaterial
+                        ) {
                             if (stack.getDamage() > 0) {
                                 stack.setDamage(stack.getDamage() - 1);
                                 _stack.setKey(ItemVariant.of(stack));

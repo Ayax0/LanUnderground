@@ -52,7 +52,8 @@ public class LanUnderground extends KubeJSPlugin {
 
         if (Files.isDirectory(jarPath)) {
             // Entwicklungsumgebung: Ressourcen-Ordner direkt im Filesystem
-            jarRoot = jarPath.resolve("resources").resolve(resourceFolder);
+            Path rootPath = Paths.get(".").resolve("../src/main").normalize().toAbsolutePath();
+            jarRoot = rootPath.resolve("resources").resolve(resourceFolder);
         } else {
             // Produktions-JAR: erstelle oder hole ZIP-Dateisystem
             URI jarUri = URI.create("jar:" + jarPath.toUri().toString());
