@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TU ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "T": {
+      "item": "modern_industrialization:bronze_thermolytic_reactor"
+    },
+    "U": {
+      "item": "modern_industrialization:steel_upgrade"
+    }
+  },
+  "result": {
+    "item": "modern_industrialization:steel_thermolytic_reactor",
+    "count": 1
+  }
+}

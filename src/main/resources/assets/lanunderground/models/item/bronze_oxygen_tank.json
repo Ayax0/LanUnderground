@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "lanunderground:item/bronze_oxygen_tank"
+  }
+}

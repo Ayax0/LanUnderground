@@ -1,0 +1,10 @@
+{
+  "default_overlays": {
+    "fluid_auto": "modern_industrialization:block/overlays/fluid_auto",
+    "item_auto": "modern_industrialization:block/overlays/item_auto",
+    "front": "modern_industrialization:block/machines/thermolytic_reactor/overlay_front",
+    "front_active": "modern_industrialization:block/machines/thermolytic_reactor/overlay_front_active",
+    "side": "modern_industrialization:block/machines/thermolytic_reactor/overlay_side",
+    "side_active": "modern_industrialization:block/machines/thermolytic_reactor/overlay_side_active"
+  }
+}

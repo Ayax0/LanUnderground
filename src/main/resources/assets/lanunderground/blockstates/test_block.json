@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "lanunderground:block/test_block"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "lanunderground",
+	"version": "${version}",
+	"name": "LanUnderground",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Ayax0"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/lanunderground/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ch.vtt.lanunderground.LanUnderground"
+		],
+		"fabric-datagen": [
+			"ch.vtt.lanunderground.LanUndergroundDataGenerator"
+		],
+		"client": [
+			"ch.vtt.lanunderground.LanUndergroundClient"
+		]
+	},
+	"mixins": [
+		"lanunderground.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"modern_industrialization": ">=1.8.6",
+		"kubejs": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

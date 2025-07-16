@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BTB",
+    "BFB",
+    "PPP"
+  ],
+  "key": {
+    "B": {
+      "item": "modern_industrialization:bronze_plate"
+    },
+    "T": {
+      "item": "modern_industrialization:bronze_tank"
+    },
+    "F": {
+      "item": "minecraft:furnace"
+    },
+    "P": {
+      "item": "modern_industrialization:fluid_pipe"
+    }
+  },
+  "result": {
+    "item": "modern_industrialization:bronze_thermolytic_reactor",
+    "count": 1
+  }
+}

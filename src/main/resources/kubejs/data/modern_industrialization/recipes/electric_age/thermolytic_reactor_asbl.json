@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BTB",
+    "BFB",
+    "PPP"
+  ],
+  "key": {
+    "B": {
+      "item": "modern_industrialization:analog_circuit"
+    },
+    "T": {
+      "item": "modern_industrialization:aluminum_tank"
+    },
+    "F": {
+      "item": "modern_industrialization:basic_machine_hull"
+    },
+    "P": {
+      "item": "modern_industrialization:tin_cable"
+    }
+  },
+  "result": {
+    "item": "modern_industrialization:electric_thermolytic_reactor",
+    "count": 1
+  }
+}

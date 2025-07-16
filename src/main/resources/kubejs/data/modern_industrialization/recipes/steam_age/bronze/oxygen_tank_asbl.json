@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "R R",
+    "PCP",
+    "BTB"
+  ],
+  "key": {
+    "R": {
+      "item": "modern_industrialization:bronze_ring"
+    },
+    "P": {
+      "item": "modern_industrialization:bronze_plate"
+    },
+    "C": {
+      "item": "minecraft:leather_chestplate"
+    },
+    "B": {
+      "item": "modern_industrialization:bronze_bolt"
+    },
+    "T": {
+      "item": "modern_industrialization:bronze_tank"
+    }
+  },
+  "result": {
+    "item": "lanunderground:bronze_oxygen_tank",
+    "count": 1
+  }
+}

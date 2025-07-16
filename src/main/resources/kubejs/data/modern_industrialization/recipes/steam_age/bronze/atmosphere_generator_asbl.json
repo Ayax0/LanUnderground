@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BRB",
+    "RCR",
+    "PPP"
+  ],
+  "key": {
+    "B": {
+      "item": "modern_industrialization:bronze_plate"
+    },
+    "R": {
+      "item": "modern_industrialization:bronze_rotor"
+    },
+    "C": {
+      "item": "modern_industrialization:bronze_machine_casing"
+    },
+    "P": {
+      "item": "modern_industrialization:fluid_pipe"
+    }
+  },
+  "result": {
+    "item": "modern_industrialization:bronze_atmosphere_generator",
+    "count": 1
+  }
+}

@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "ch.vtt.lanunderground.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [
+		"LivingEntityMixin",
+		"PlayerInventoryMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}

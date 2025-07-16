@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TRT",
+    "RBR",
+    "ACA"
+  ],
+  "key": {
+    "T": {
+      "item": "modern_industrialization:tin_plate"
+    },
+    "R": {
+      "item": "modern_industrialization:tin_rotor"
+    },
+    "B": {
+      "item": "modern_industrialization:basic_machine_hull"
+    },
+    "A": {
+      "item": "modern_industrialization:analog_circuit"
+    },
+    "C": {
+      "item": "modern_industrialization:tin_cable"
+    }
+  },
+  "result": {
+    "item": "modern_industrialization:electric_atmosphere_generator",
+    "count": 1
+  }
+}
