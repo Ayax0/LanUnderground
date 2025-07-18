@@ -158,6 +158,7 @@ public class AirManagerServer {
             int range = AtmosphereGenerator.getRange(machine);
             boolean inSquare =
                 Math.abs(player.getPos().getX() - machine.getPos().toCenterPos().getX()) <= range &&
+                Math.abs(player.getPos().getY() - machine.getPos().toCenterPos().getY()) <= range &&
                 Math.abs(player.getPos().getZ() - machine.getPos().toCenterPos().getZ()) <= range;
 
             if(!inSquare) continue;
