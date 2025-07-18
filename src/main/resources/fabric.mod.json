@@ -34,7 +34,7 @@
 		"java": ">=17",
 		"fabric-api": "*",
 		"modern_industrialization": ">=1.8.6",
-		"kubejs": "*"
+		"kubejs": ">=2001.6.5-build.16"
 	},
 	"suggests": {
 		"another-mod": "*"
