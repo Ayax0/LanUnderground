@@ -2,14 +2,14 @@
 	"schemaVersion": 1,
 	"id": "lanunderground",
 	"version": "${version}",
-	"name": "LanUnderground",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Atmospheric Expansion",
+	"description": "Atmospheric Expansion adds a breath‑stealing challenge to Modern Industrialization: an oxygen‑depleted world where you must build and power Atmosphere Generators to create safe, breathable zones. Connect generators with pipes and vents, manage energy consumption, and expand your life‑support network to explore and industrialize without suffocating.",
 	"authors": [
 		"Ayax0"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://vtt.ch",
+		"sources": "https://github.com/Ayax0/LanUnderground"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/lanunderground/icon.png",

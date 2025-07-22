@@ -6,7 +6,6 @@ import net.fabricmc.loader.api.FabricLoader;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.security.CodeSource;
@@ -70,19 +69,24 @@ public class LanUnderground extends KubeJSPlugin {
                 try {
                     Path relative = jarRoot.relativize(source);
                     Path destination = targetFolder.resolve(relative.toString());
+
                     if (Files.isDirectory(source)) {
+                        // Verzeichnisse anlegen (falls nicht vorhanden)
                         if (Files.notExists(destination)) {
                             Files.createDirectories(destination);
                         }
                     } else {
-                        if (Files.notExists(destination)) {
-                            Files.createDirectories(destination.getParent());
-                            Files.copy(source, destination);
-                            ch.vtt.lanunderground.LanUnderground.LOGGER.debug("Kopiert {} -> {}", source, destination);
-                        }
+                        // Datei kopieren und vorhandene Dateien überschreiben
+                        Files.createDirectories(destination.getParent());
+                        Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
+                        ch.vtt.lanunderground.LanUnderground.LOGGER.debug(
+                            "Überschrieben bzw. kopiert {} -> {}", source, destination
+                        );
                     }
                 } catch (IOException ex) {
-                    ch.vtt.lanunderground.LanUnderground.LOGGER.error("Fehler beim Kopieren von {}:", source, ex);
+                    ch.vtt.lanunderground.LanUnderground.LOGGER.error(
+                        "Fehler beim Kopieren von {}:", source, ex
+                    );
                 }
             });
         } finally {
