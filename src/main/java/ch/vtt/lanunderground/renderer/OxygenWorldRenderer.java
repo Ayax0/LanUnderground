@@ -8,6 +8,7 @@ import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientBlockEntityEvents;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.RenderLayer;
@@ -43,6 +44,11 @@ public class OxygenWorldRenderer implements WorldRenderEvents.AfterEntities {
         ClientBlockEntityEvents.BLOCK_ENTITY_UNLOAD.register((block, world) -> {
             if (isAtmosphereGenerator(block))
                 atmosphereGenerators.remove((MachineBlockEntity) block);
+        });
+
+        PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, block) -> {
+            if(!(block instanceof MachineBlockEntity machine)) return;
+            atmosphereGenerators.remove(machine);
         });
     }
 

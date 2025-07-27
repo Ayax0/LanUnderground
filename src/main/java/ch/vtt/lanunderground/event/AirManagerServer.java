@@ -11,8 +11,11 @@ import ch.vtt.lanunderground.armor.BronzeOxygenTankArmorMaterial;
 import ch.vtt.lanunderground.armor.ElectricOxygenTankArmorMaterial;
 import ch.vtt.lanunderground.armor.SteelOxygenTankArmorMaterial;
 import ch.vtt.lanunderground.utils.AtmosphereGenerator;
+import dev.latvian.mods.kubejs.bindings.event.BlockEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerBlockEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerWorldEvents;
+import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.transfer.v1.item.ItemVariant;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
@@ -52,6 +55,11 @@ public class AirManagerServer {
             ) {
                 blocks.remove(machine);
             }
+        });
+
+        PlayerBlockBreakEvents.AFTER.register((world, player, pos, state, block) -> {
+            if(!(block instanceof MachineBlockEntity machine)) return;
+            blocks.remove(machine);
         });
 
         ServerTickEvents.START_SERVER_TICK.register(server -> {
