@@ -20,14 +20,16 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Environment(EnvType.CLIENT)
 public class OxygenWorldRenderer implements WorldRenderEvents.AfterEntities {
 
     private final MinecraftClient client = MinecraftClient.getInstance();
-    private final ArrayList<MachineBlockEntity> atmosphereGenerators = new ArrayList<>();
+    private final Set<MachineBlockEntity> atmosphereGenerators = new HashSet<>();
 
     private final int[][] edges = {
         {0, 1}, {1, 2}, {2, 3}, {3, 0},
@@ -70,6 +72,8 @@ public class OxygenWorldRenderer implements WorldRenderEvents.AfterEntities {
         VertexConsumerProvider.Immediate buffer = client.getBufferBuilders().getEntityVertexConsumers();
 
         for(MachineBlockEntity machine : atmosphereGenerators) {
+            if(machine.getWorld() != client.player.getWorld()) continue;
+
             int range = getRange(machine);
             int color = isMachineActive(machine) ? 0xff00ff00 : 0xffff0000;
 

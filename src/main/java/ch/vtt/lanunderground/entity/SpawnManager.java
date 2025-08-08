@@ -16,14 +16,19 @@ public class SpawnManager {
         EntityType.CREEPER,
         EntityType.SKELETON,
         EntityType.SPIDER,
-        EntityType.ZOMBIE,
+        // EntityType.ZOMBIE,
         EntityType.SLIME,
         EntityType.ENDERMAN,
         EntityType.DROWNED,
         EntityType.PHANTOM,
         EntityType.HUSK,
         EntityType.STRAY,
-        EntityType.PILLAGER,
+        EntityType.PILLAGER
+        // EntityType.ZOMBIE_VILLAGER
+    );
+
+    public static final List<EntityType<? extends MobEntity>> OVERWORLD_SPEC_MONSTERS = List.of(
+        EntityType.ZOMBIE,
         EntityType.ZOMBIE_VILLAGER
     );
 
@@ -84,6 +89,35 @@ public class SpawnManager {
 
                         return random.nextFloat() < probability;
                     }
+                );
+            } catch(IllegalStateException e) {
+                LanUnderground.LOGGER.info("skip monster registration: " + entity.getName());
+            }
+        });
+
+        OVERWORLD_SPEC_MONSTERS.forEach(entity -> {
+            try {
+                SpawnRestriction.register(
+                        entity,
+                        SpawnRestriction.Location.ON_GROUND,
+                        Heightmap.Type.MOTION_BLOCKING_NO_LEAVES,
+                        (type, world, reason, pos, random) -> {
+                            if(
+                                    reason != SpawnReason.CHUNK_GENERATION &&
+                                            reason != SpawnReason.NATURAL
+                            ) return true;
+
+                            int y = pos.getY();
+                            final int MAX_Y = 64;
+                            final int MIN_Y = world.getDimension().minY();
+
+                            if (y >= MAX_Y) return false;
+
+                            float probability = (float)(MAX_Y - y) / (MAX_Y - MIN_Y);
+                            probability = MathHelper.clamp(probability, 0.0f, 1.0f);
+
+                            return random.nextFloat() < probability;
+                        }
                 );
             } catch(IllegalStateException e) {
                 LanUnderground.LOGGER.info("skip monster registration: " + entity.getName());
